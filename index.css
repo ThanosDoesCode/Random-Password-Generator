@@ -31,11 +31,12 @@ html {
 .pass-holder {
   height: 30px;
   background-color: #2A2A2A;
-  width: 150px;
+  min-width: 150px;
+  white-space: nowrap;
   font-weight: 600;
   text-align: center;
   margin-bottom: 10px;
-  padding-top: 12px;
+  padding: 12px 10px 0px 10px;
   cursor: pointer;
   border-radius: 2px;
 }
@@ -45,7 +46,7 @@ html {
   justify-content: space-evenly;
 }
 
-#generate-btn {
+button{
   background-color: #6A4C9C;
   border: none;
   color: #E0E0E0;
@@ -57,22 +58,49 @@ html {
   box-shadow: 0px 0px 10px #6A4C9C;
 }
 
-#generate-btn:hover {
+button:hover {
   background-color: #2A2A2A;
   cursor: pointer;
 }
 
-#generate-btn:active {
+button:active {
   background-color: #6A4C9C;
 }
 
+#password-length-el{
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  background-color: #2A2A2A;
+}
+
+#length-btns{
+  text-align: center;
+}
+
+#increment-btn, #decrement-btn{
+  padding: 5px 10px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#password-length-el{
+  height: 30px;
+  text-align: center;
+}
 
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
-
-
-
-
+/* Hide arrows in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 
 
