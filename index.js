@@ -4,12 +4,21 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 let password1El = document.getElementById("password1-el")
 let password2El = document.getElementById("password2-el")
 let copiedMessageEl = document.getElementById("copied-message-id")
+let passwordLengthEl = document.getElementById("password-length-el")
 
 function generate(){
     let password1 = ""
     let password2 = ""
-    let passwordLength = 12
+    let passwordLength = parseInt(passwordLengthEl.value); // Get password length from input
     
+     // Ensure the length stays within limits
+    if (passwordLength < 6) {
+        passwordLength = 6;
+        passwordLengthEl.value = 6; // Reset input field
+    } else if (passwordLength > 20) {
+        passwordLength = 20;
+        passwordLengthEl.value = 20; // Reset input field
+    }
     
     for (let i = 0; i < passwordLength; i++){
         let randomPass1 = Math.floor(  Math.random() * characters.length )
@@ -24,4 +33,29 @@ function generate(){
     password2El.textContent = password2 
 }
 
+// Function to copy password to clipboard
+function copyToClipboard(id) {
+    let passwordText = document.getElementById(id).textContent;
+    if (passwordText) {
+        navigator.clipboard.writeText(passwordText).then(() => {
+            copiedMessageEl.textContent = `Copied: ${passwordText}`;
+            setTimeout(() => (copiedMessageEl.textContent = ""), 2000);
+        });
+    }
+}
 
+function increment() {
+    let length = parseInt(passwordLengthEl.value) || 6; // Default to 6 if empty or NaN
+    if (length < 20) {
+        length += 1;
+        passwordLengthEl.value = length;
+    }
+}
+
+function decrement() {
+    let length = parseInt(passwordLengthEl.value) || 6; // Default to 6 if empty or NaN
+    if (length > 6) {
+        length -= 1;
+        passwordLengthEl.value = length;
+    }
+}
