@@ -39,7 +39,7 @@ function copyToClipboard(id) {
     if (passwordText) {
         navigator.clipboard.writeText(passwordText).then(() => {
             copiedMessageEl.innerHTML = "Copied!";
-            setTimeout(() => (copiedMessageEl.textContent = ""), 2000);
+            setTimeout(() => (copiedMessageEl.textContent = ""), 400);
         });
     }
 }
