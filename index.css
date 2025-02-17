@@ -14,16 +14,17 @@ html {
 
 #title {
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 #container {
   background-color: #1C1C1C;
   padding: 0px 50px 25px;
-  height: 250px;
-  width: 550px;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
+  width: 400px;
+  height: 400px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px #6A4C9C;
 }
@@ -31,7 +32,7 @@ html {
 .pass-holder {
   height: 30px;
   background-color: #2A2A2A;
-  min-width: 150px;
+  width: 200px;
   white-space: nowrap;
   font-weight: 600;
   text-align: center;
@@ -41,18 +42,26 @@ html {
   border-radius: 2px;
 }
 
-#pass-container {
-  display: block;
-  justify-content: space-evenly;
+hr {
+  margin-top: 40px;
+  border-color: #6A4C9C;
 }
 
-button{
+#pass-container {
+  display: flex;
+  gap: 40px;
+}
+
+#generate-btn {
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+button {
   background-color: #6A4C9C;
   border: none;
   color: #E0E0E0;
   padding: 10px;
-  border-radius: 10px;
-  margin-top: 20px;
   transition: background-color 0.2s ease-in-out;
   transition-delay: 0ms;
   box-shadow: 0px 0px 10px #6A4C9C;
@@ -67,43 +76,54 @@ button:active {
   background-color: #6A4C9C;
 }
 
-#password-length-el{
+#password-length-el {
   color: #fff;
   margin-top: 10px;
   border: none;
   background-color: #2A2A2A;
 }
 
-#length-btns{
+#length-btns {
   text-align: center;
 }
 
-#increment-btn, #decrement-btn{
+#increment-btn,
+#decrement-btn {
   padding: 5px 10px;
   text-align: center;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 10px;
+  width: 30px;
 }
 
-#password-length-el{
-  height: 30px;
+#password-length-el {
+  height: 24px;
   text-align: center;
 }
 
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-/* Hide arrows in Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
+#password-length-text {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #A3A3A3;
 }
 
+p {
+  color: #6A4C9C;
+}
 
-
+#copied-message-id {
+  padding: 0;
+  margin: 20px;
+}
 
 .gray {
   color: #A3A3A3;
