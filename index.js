@@ -12,25 +12,25 @@ function generate(){
     let passwordLength = parseInt(passwordLengthEl.value); // Get password length from input
     
      // Ensure the length stays within limits
-    if (passwordLength < 6) {
-        passwordLength = 6;
-        passwordLengthEl.value = 6; // Reset input field
-    } else if (passwordLength > 20) {
-        passwordLength = 20;
-        passwordLengthEl.value = 20; // Reset input field
+    if (passwordLength < 6){
+        passwordLength = 6
+        passwordLengthEl.value = 6
+    } else if (passwordLength > 20){
+        passwordLength = 20
+        passwordLengthEl.value = 20
     }
     
     for (let i = 0; i < passwordLength; i++){
-        let randomPass1 = Math.floor(  Math.random() * characters.length )
-        let randomPass2 = Math.floor(  Math.random() * characters.length )
-        
+        let randomPass1 = Math.floor( Math.random() * characters.length )
+        let randomPass2 = Math.floor( Math.random() * characters.length )
         
         password1 += characters[randomPass1]
         password2 += characters[randomPass2]
+        
     }
     
-    password1El.textContent = password1 
-    password2El.textContent = password2 
+    password1El.textContent = password1
+    password2El.textContent = password2
 }
 
 // Function to copy password to clipboard
@@ -38,7 +38,7 @@ function copyToClipboard(id) {
     let passwordText = document.getElementById(id).textContent;
     if (passwordText) {
         navigator.clipboard.writeText(passwordText).then(() => {
-            copiedMessageEl.textContent = `Copied: ${passwordText}`;
+            copiedMessageEl.innerHTML = "Copied!";
             setTimeout(() => (copiedMessageEl.textContent = ""), 2000);
         });
     }
